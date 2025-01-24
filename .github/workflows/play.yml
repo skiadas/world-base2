@@ -6,7 +6,11 @@ jobs:
   playGame:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
       - name: see event id
-        run: echo $EVENT_ID
+        run: |
+          echo $EVENT_ID
+          echo "$EVENT_ID % $(cat words.txt | wc -l) " | bc
         env:
           EVENT_ID: ${{ github.event.issue.id }}
