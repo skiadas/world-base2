@@ -11,8 +11,9 @@ jobs:
       - name: get the target word
         run: |
           LINE=$(echo "$EVENT_ID % $(cat words.txt | wc -l) + 1" | bc)
-          echo $LINE
           TARGET=$(head -n $LINE words.txt | tail -n -1)
           echo $TARGET
+          echo $TITLE
         env:
           EVENT_ID: ${{ github.event.issue.id }}
+          TITLE: ${{ github.event.issue.title }}
