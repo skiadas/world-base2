@@ -9,13 +9,13 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v4
       - name: get the target word
-        continue-on-error: true
         run: |
           LINE=$(echo "$EVENT_ID % $(cat words.txt | wc -l) + 1" | bc)
           TARGET=$(head -n $LINE words.txt | tail -n -1)
           GUESS=$(echo $TITLE | cut -c 1-5)
           chmod u+x wordle.py
           ./wordle.py "$TARGET" "$GUESS"
+          echo "something"
         env:
           EVENT_ID: ${{ github.event.issue.id }}
           TITLE: ${{ github.event.issue.title }}
