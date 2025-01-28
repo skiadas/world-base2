@@ -5,6 +5,8 @@ on:
 jobs:
   playGame:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
       - name: checkout repo
         uses: actions/checkout@v4
