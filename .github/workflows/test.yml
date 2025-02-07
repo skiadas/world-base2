@@ -1,0 +1,10 @@
+name: Testing
+on:
+  workflow_dispatch
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run cal
+        run: cal
+      
