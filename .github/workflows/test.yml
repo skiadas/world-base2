@@ -6,5 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: run cal
-        run: cal
+        run: |
+          which cal
+          which calendar
+          calendar
       
