@@ -5,7 +5,7 @@ jobs:
   testing:
     runs-on: ubuntu-latest
     steps:
-      - run: sudo apt-get install -y ncal
+      - run: sudo apt install -y ncal
       - name: run cal
         run: |
           ncal
