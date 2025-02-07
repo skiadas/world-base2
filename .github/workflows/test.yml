@@ -7,7 +7,5 @@ jobs:
     steps:
       - name: run cal
         run: |
-          which cal
-          which calendar
-          calendar
+          ncal
       
