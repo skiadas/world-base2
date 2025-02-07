@@ -5,7 +5,8 @@ jobs:
   testing:
     runs-on: ubuntu-latest
     steps:
-      - run: sudo DEBIAN_FRONTEND=noninteractive apt install -y ncal
+      - run: |
+          sudo apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt install -y ncal
       - name: run cal
         run: |
           cal
