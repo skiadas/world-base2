@@ -8,5 +8,5 @@ jobs:
       - run: sudo DEBIAN_FRONTEND=noninteractive apt install -y ncal
       - name: run cal
         run: |
-          ncal
+          cal
       
